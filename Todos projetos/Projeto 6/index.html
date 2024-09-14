@@ -3,13 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da Cobrinha</title>
+    <title>Loja de Exemplo</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Jogo da Cobrinha</h1>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <button id="restartButton">Recomeçar o Jogo</button>
+    <header>
+        <h1>Loja de Exemplo</h1>
+        <button id="cart-button">Carrinho (<span id="cart-count">0</span>)</button>
+    </header>
+
+    <main>
+        <section class="products">
+            <article class="product">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <img src="product1-1.jpg" alt="Produto 1 - Imagem 1">
+                        <img src="product1-2.jpg" alt="Produto 1 - Imagem 2">
+                        <img src="product1-3.jpg" alt="Produto 1 - Imagem 3">
+                    </div>
+                    <button class="carousel-control prev">&#10094;</button>
+                    <button class="carousel-control next">&#10095;</button>
+                </div>
+                <h2>Produto 1</h2>
+                <p class="description">Descrição detalhada do Produto 1. Aqui você pode fornecer informações mais extensas sobre o produto.</p>
+                <p>R$ 50,00</p>
+                <button class="add-to-cart" data-product="Produto 1" data-price="50.00">Adicionar ao Carrinho</button>
+            </article>
+            <article class="product">
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <img src="product2-1.jpg" alt="Produto 2 - Imagem 1">
+                        <img src="product2-2.jpg" alt="Produto 2 - Imagem 2">
+                    </div>
+                    <button class="carousel-control prev">&#10094;</button>
+                    <button class="carousel-control next">&#10095;</button>
+                </div>
+                <h2>Produto 2</h2>
+                <p class="description">Descrição detalhada do Produto 2. Aqui você pode fornecer informações mais extensas sobre o produto.</p>
+                <p>R$ 75,00</p>
+                <button class="add-to-cart" data-product="Produto 2" data-price="75.00">Adicionar ao Carrinho</button>
+            </article>
+            <!-- Adicione mais produtos aqui -->
+        </section>
+
+        <section class="about">
+            <h2>Sobre Nós</h2>
+            <p>Somos uma loja dedicada a fornecer os melhores produtos para nossos clientes. Nosso objetivo é oferecer uma experiência de compra excepcional com produtos de alta qualidade e atendimento ao cliente de primeira linha.</p>
+        </section>
+    </main>
+
+    <div id="cart" class="cart">
+        <h2>Carrinho</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: R$ <span id="cart-total">0.00</span></p>
+        <button id="checkout-button">Finalizar Compra</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Loja de Exemplo. Todos os direitos reservados.</p>
+    </footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,31 +1,19 @@
-let score = 0;
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
 
-const movingSquare = document.getElementById('moving-square');
-const scoreDisplay = document.getElementById('score');
-const container = document.getElementById('game-container');
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
 
-function moveSquare() {
-    const containerRect = container.getBoundingClientRect();
-    const squareSize = movingSquare.offsetWidth;
-    const maxX = containerRect.width - squareSize;
-    const maxY = containerRect.height - squareSize;
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
 
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-
-    movingSquare.style.left = `${randomX}px`;
-    movingSquare.style.top = `${randomY}px`;
-}
-
-function updateScore() {
-    score += 1;
-    scoreDisplay.textContent = `Pontuação: ${score}`;
-}
-
-movingSquare.addEventListener('click', () => {
-    updateScore();
-    moveSquare();
-});
-
-// Mover o quadrado pela primeira vez
-moveSquare();
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()

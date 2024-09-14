@@ -1,85 +1,107 @@
-const icons = [
-    'fa-car', 'fa-bicycle', 'fa-bus', 'fa-train', 'fa-plane', 'fa-ship',
-    'fa-motorcycle', 'fa-tachometer-alt', 'fa-suitcase', 'fa-cogs',
-    'fa-bolt', 'fa-cloud'
-];
+// script.js
 
-const container = document.querySelector('.game-container');
-const restartButton = document.getElementById('restart-button');
+document.addEventListener('DOMContentLoaded', () => {
+    const cartButton = document.getElementById('cart-button');
+    const cart = document.getElementById('cart-section');
+    const cartItems = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+    const clearCartButton = document.getElementById('clear-cart');
+    const checkoutButton = document.getElementById('checkout');
+    const confirmationSection = document.getElementById('confirmation');
+    const returnToShopButton = document.getElementById('return-to-shop');
+    const backToShopButton = document.getElementById('back-to-shop');
 
-let hasFlippedCard = false;
-let firstCard, secondCard;
-let lockBoard = false;
+    let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
 
-// Cria as cartas e embaralha
-function createCards() {
-    container.innerHTML = '';
-    const shuffledIcons = shuffle([...icons, ...icons]); // Duplicar os ícones para ter 24 cartas
+    if (cartButton) {
+        // Adiciona produtos ao carrinho
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productElement = e.target.closest('.product');
+                const id = productElement.getAttribute('data-id');
+                const name = productElement.querySelector('h3').textContent;
+                const price = parseFloat(productElement.querySelector('.product-price').textContent.replace('R$ ', '').replace(',', '.'));
 
-    shuffledIcons.forEach(icon => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.dataset.icon = icon;
-        card.innerHTML = `<i class="fas ${icon}"></i>`;
-        card.addEventListener('click', flipCard);
-        container.appendChild(card);
-    });
-}
+                addToCart(id, name, price);
+            });
+        });
 
-// Embaralha um array
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
-function flipCard() {
-    if (lockBoard) return;
-    if (this === firstCard) return;
-
-    this.classList.add('flipped');
-
-    if (!hasFlippedCard) {
-        hasFlippedCard = true;
-        firstCard = this;
-        return;
+        // Atualiza o contador de itens no carrinho
+        updateCartCount();
     }
 
-    secondCard = this;
-    checkForMatch();
-}
+    if (cart) {
+        // Atualiza o carrinho na página cart.html
+        updateCart();
 
-function checkForMatch() {
-    const isMatch = firstCard.dataset.icon === secondCard.dataset.icon;
+        clearCartButton.addEventListener('click', () => {
+            cartData = [];
+            localStorage.removeItem('cartData');
+            updateCart();
+        });
 
-    isMatch ? disableCards() : unflipCards();
-}
+        checkoutButton.addEventListener('click', () => {
+            if (cartData.length > 0) {
+                // Limpa os itens do carrinho e remove do localStorage
+                cartData = [];
+                localStorage.removeItem('cartData');
 
-function disableCards() {
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
-    resetBoard();
-}
+                // Atualiza a visualização do carrinho
+                updateCart();
 
-function unflipCards() {
-    lockBoard = true;
+                // Exibe a seção de confirmação
+                cart.classList.add('hidden');
+                confirmationSection.classList.remove('hidden');
+            } else {
+                alert('Seu carrinho está vazio.');
+            }
+        });
 
-    setTimeout(() => {
-        firstCard.classList.remove('flipped');
-        secondCard.classList.remove('flipped');
-        resetBoard();
-    }, 1500);
-}
+        returnToShopButton.addEventListener('click', () => {
+            window.location.href = 'index.html'; // Redireciona para a página inicial
+        });
+    }
 
-function resetBoard() {
-    [hasFlippedCard, lockBoard] = [false, false];
-    [firstCard, secondCard] = [null, null];
-}
+    if (backToShopButton) {
+        backToShopButton.addEventListener('click', () => {
+            localStorage.removeItem('cartData');
+        });
+    }
 
-// Adiciona evento de reinício
-restartButton.addEventListener('click', createCards);
+    function addToCart(id, name, price) {
+        const itemIndex = cartData.findIndex(item => item.id === id);
 
-// Inicializa o jogo
-createCards();
+        if (itemIndex > -1) {
+            cartData[itemIndex].quantity += 1;
+        } else {
+            cartData.push({ id, name, price, quantity: 1 });
+        }
+
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+        updateCartCount();
+    }
+
+    function updateCart() {
+        if (cart) {
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cartData.forEach(item => {
+                total += item.price * item.quantity;
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - R$ ${item.price.toFixed(2)} x ${item.quantity}`;
+                cartItems.appendChild(listItem);
+            });
+
+            cartTotal.textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+    }
+
+    function updateCartCount() {
+        const totalCount = cartData.length;
+        if (cartCount) {
+            cartCount.textContent = totalCount;
+        }
+    }
+});
