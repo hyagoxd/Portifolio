@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPF</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+    <input id="cpf" placeholder="CPF" autocomplete="off">
+    <input id="tel" placeholder="TELEFONE" autocomplete="off">
+</div>
+    <!--importar script da máscara-->
+    <script src="js/formMask_V2.js"></script>
+
+    <!--
+        para iniciar, informe o elemento, a máscara, o caracter de substituição e
+        os caracteres a serem ignorados
+    -->
+    <script>
+        new FormMask(document.querySelector("#cpf"), "___.___.___-__", "_", [".", "-"])
+        new FormMask(document.querySelector("#tel"), "(__)_____-____", "_", ["(", ")", "-"])
+    </script>
+
+</body>
+</html>

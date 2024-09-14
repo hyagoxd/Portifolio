@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadoras de Gravidez e Período Fértil</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadoras de Gravidez e Período Fértil</h1>
+
+        <!-- Calculadora de Probabilidade de Gravidez por Idade -->
+        <div class="calculator">
+            <h2>Probabilidade de Gravidez por Idade no Período Fértil</h2>
+            <form id="calcForm">
+                <label for="age">Idade:</label>
+                <input type="number" id="age" name="age" min="13" max="50" required />
+                <button type="button" onclick="calculatePregnancy()">Calcular</button>
+            </form>
+            <div id="resultPregnancy"></div>
+        </div>
+
+        <!-- Calculadora de Período Fértil com duração do ciclo -->
+        <div class="calculator">
+            <h2>Calculadora de Período Fértil</h2>
+            <form id="fertilityForm">
+                <label for="cycleLengthFertility">Duração do ciclo menstrual (em dias):</label>
+                <input type="number" id="cycleLengthFertility" name="cycleLengthFertility" min="21" max="35" required />
+                <label for="lastPeriodFertility">Data do início da última menstruação:</label>
+                <input type="date" id="lastPeriodFertility" name="lastPeriodFertility" required />
+                <button type="button" onclick="calculateFertility()">Calcular</button>
+            </form>
+            <div id="resultFertility"></div>
+        </div>
+
+        <!-- Calculadora de Data da Próxima Menstruação com duração do ciclo -->
+        <div class="calculator">
+            <h2>Calculadora de Data da Próxima Menstruação</h2>
+            <form id="nextPeriodForm">
+                <label for="cycleLengthNext">Duração do ciclo menstrual (em dias):</label>
+                <input type="number" id="cycleLengthNext" name="cycleLengthNext" min="21" max="35" required />
+                <label for="lastPeriodNext">Data do início da última menstruação:</label>
+                <input type="date" id="lastPeriodNext" name="lastPeriodNext" required />
+                <button type="button" onclick="calculateNextPeriod()">
+                    Calcular
+                </button>
+            </form>
+            <div id="resultNextPeriod"></div>
+        </div>
+
+        <!-- Calculadora de Período Fértil com ciclo fixo de 28 dias -->
+        <div class="calculator">
+            <h2>Calculadora de Período Fértil com ciclo fixo de 28 dias</h2>
+            <form id="fertilityFormFixed">
+                <label for="lastPeriodFertilityFixed">Data do início da última menstruação:</label>
+                <input type="date" id="lastPeriodFertilityFixed" name="lastPeriodFertilityFixed" required />
+                <button type="button" onclick="calculateFertilityFixed()">
+                    Calcular
+                </button>
+            </form>
+            <div id="resultFertilityFixed"></div>
+        </div>
+
+        <!-- Calculadora de Data da Próxima Menstruação com ciclo fixo de 28 dias -->
+        <div class="calculator">
+            <h2>
+                Calculadora de Data da Próxima Menstruação com ciclo fixo de 28 dias
+            </h2>
+            <form id="nextPeriodFormFixed">
+                <label for="lastPeriodNextFixed">Data do início da última menstruação:</label>
+                <input type="date" id="lastPeriodNextFixed" name="lastPeriodNextFixed" required />
+                <button type="button" onclick="calculateNextPeriodFixed()">
+                    Calcular
+                </button>
+            </form>
+            <div id="resultNextPeriodFixed"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

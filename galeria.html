@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Sites</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Adicione o CSS específico para a galeria aqui */
+        .galeria-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .site-card {
+            background: #333;
+            border: 1px solid #444;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            height: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .site-card a {
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        .site-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .site-card p {
+            padding: 0.5rem;
+            text-align: center;
+            background: #222;
+            margin: 0;
+        }
+
+        .site-card:hover {
+            transform: translateY(-10px);
+        }
+
+        header, footer {
+            background: #000;
+            color: #00aaff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Galeria de Sites</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Voltar ao Portfólio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="galeria">
+            <h2>Galeria de Sites</h2>
+            <div class="galeria-container">
+                <!-- Repetir este bloco para cada site -->
+                <div class="site-card">
+                    <a href="Todos projetos/Projeto 1/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005338.png" alt="Site 1">
+                        <p>Projeto 1</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Projeto 2/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005352.png" alt="Site 2">
+                        <p>Projeto 2</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Projeto 3/Landing page 1/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005405.png" alt="Site 3">
+                        <p>Projeto 3</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Projeto 4/Cal final/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005432.png" alt="Site 4">
+                        <p>Projeto 4</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Projeto 5/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005443.png" alt="Site 5">
+                        <p>Projeto 5</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Projeto 6/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005505.png" alt="Site 6">
+                        <p>Projeto 6</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Projeto 7/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005516.png" alt="Site 7">
+                        <p>Projeto 7</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Projeto 8/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005534.png" alt="Site 8">
+                        <p>Projeto 8</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Aula 10/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005553.png" alt="Site 9">
+                        <p>Projeto 9</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Aula 9/formar-grupos/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005602.png" alt="Site 10">
+                        <p>Projeto 10</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Aula 7/agendamento-salao/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005631.png" alt="Site 11">
+                        <p>Projeto 11</p>
+                    </a>
+                </div>
+                <div class="site-card">
+                    <a href="Todos projetos/Aula 8/horas-trabalhadas/index.html" target="_blank">
+                        <img src="img galeria/Captura de tela 2024-09-13 005640.png" alt="Site 12">
+                        <p>Projeto 12</p>
+                    </a>
+                </div>
+                <!-- Fim do bloco de repetição -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Portfólio. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

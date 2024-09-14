@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Carrinho de Compras</h1>
+        <nav>
+            <a href="index.html" id="back-to-shop">
+                Voltar à Loja <i class="fas fa-arrow-left"></i>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section id="cart-section">
+            <h2>Seu Carrinho</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: R$ 0,00</p>
+            <div id="cart-actions">
+                <button id="clear-cart">
+                    Limpar Carrinho <i class="fas fa-trash-alt"></i>
+                </button>
+                <button id="checkout">
+                    Finalizar Compra <i class="fas fa-check-out"></i>
+                </button>
+            </div>
+        </section>
+        <section id="confirmation" class="hidden">
+            <h2>Compra Concluída</h2>
+            <p>Obrigado por sua compra! Seu pedido foi realizado com sucesso.</p>
+            <button id="return-to-shop">Voltar à Loja</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Loja de Peças de Carro. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

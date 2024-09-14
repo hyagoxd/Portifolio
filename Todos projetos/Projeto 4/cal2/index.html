@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gravidez e Período Fértil</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Gravidez e Período Fértil</h1>
+        
+        <!-- Calculadora de Porcentagem de Gravidez -->
+        <div class="calculator">
+            <h2>Probabilidade de Gravidez por Idade</h2>
+            <form id="calcForm">
+                <label for="age">Idade:</label>
+                <input type="number" id="age" name="age" min="13" max="50" required>
+                <button type="button" onclick="calculatePregnancy()">Calcular</button>
+            </form>
+            <div id="resultPregnancy"></div>
+        </div>
+        
+        <!-- Calculadora de Período Fértil -->
+        <div class="calculator">
+            <h2>Calculadora de Período Fértil</h2>
+            <form id="fertilityForm">
+                <label for="cycleLength">Duração do ciclo menstrual (em dias):</label>
+                <input type="number" id="cycleLength" name="cycleLength" min="21" max="35" required>
+                <label for="lastPeriod">Data do início da última menstruação:</label>
+                <input type="date" id="lastPeriod" name="lastPeriod" required>
+                <button type="button" onclick="calculateFertility()">Calcular</button>
+            </form>
+            <div id="resultFertility"></div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

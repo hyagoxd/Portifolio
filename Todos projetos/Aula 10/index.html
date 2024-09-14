@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">SC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Sobre a Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Orçamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#foot">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/carrousel 1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carrousel 2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carrousel 3.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <hr>
+
+    <div id="servicos" class="text-center">
+        <h2>Conheça nossos serviços</h2>
+        <p>
+            A Senac Construction é líder em inovação e sustentabilidade na construção civil. Com uma equipe
+            especializada,
+            utilizamos tecnologias avançadas e materiais sustentáveis para projetos que não só atendem às necessidades
+            dos
+            clientes, mas também promovem o desenvolvimento responsável das comunidades onde atuamos. Construímos não
+            apenas
+            edifícios, mas um futuro melhor.
+        </p>
+    </div>
+
+    <hr>
+
+    <!-- Cards -->
+    <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/trabalhadores" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Sobre o Trabalho</h5>
+                    <p class="card-text">Contamos com a segurança do nosso trabalho e projetamos conforme suas
+                        necessidades.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Formulário de Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/silhueta.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Segurança</h5>
+                    <p class="card-text">Trabalhamos com excelência e segurança, sempre focados na satisfação do
+                        cliente.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Formulário de Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/obra.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Sobre os Trabalhadores</h5>
+                    <p class="card-text">Nossos trabalhadores são especializados e trabalham em equipe para garantir
+                        qualidade.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Formulário de Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/const.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Infraestrutura</h5>
+                    <p class="card-text">Projetamos conforme suas necessidades, seja para casa, comércio ou apartamento.
+                    </p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Formulário de Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/arq.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Planejamento de Projetos</h5>
+                    <p class="card-text">Planejamos com as melhores equipes, garantindo os melhores projetos para você.
+                    </p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Formulário de Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/arq.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Sobre nós</h5>
+                    <p class="card-text">Senac Construction, a melhor construtora com atendimento e avaliação de
+                        excelência.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Formulário de Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="foot" class="bg-dark">
+        <div class="container text-center ">
+            <div class="row text-light">
+                <div class="col-md-4">
+                    <div class="option ">
+                        <div class="option-title">Contatos</div>
+                        <div class="option-desc">13 997497374</div>
+                        <div class="option-desc">senaconstruction@gmail.com</div>
+                    </div>
+                </div>
+                <div class="col-md-4 bg-secundary">
+                    <div class="option">
+                        <div class="option-title">Redes Sociais</div>
+                        <div class="option-desc">@senacregistro</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="option">
+                        <div class="option-title">Endereços</div>
+
+                        <div class="option-desc">Registro</div>
+
+                        <div class="option-desc">São Paulo</div>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid #2c2c2c; height: 40px; line-height: 40px; color: #6c6c6c; font-size: 12px; margin-top: 30px;">
+                Copyright - Todos os Direitos | Reservados</div>
+        </div>
+    </footer>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Formulario de Orçamento</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Preencha o formulário
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="container mt-5">
+                                            <h2>Formulário de Contato</h2>
+                                            <form id="formulario" novalidate>
+                                                <div class="form-group">
+                                                    <label for="nome">Nome:</label>
+                                                    <input type="text" class="form-control" id="nome" name="nome"
+                                                        placeholder="Digite seu nome" required>
+                                                    <div class="invalid-feedback">
+                                                        Por favor, insira seu nome.
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email:</label>
+                                                    <input type="email" class="form-control" id="email" name="email"
+                                                        placeholder="Digite seu email" required>
+                                                    <div class="invalid-feedback">
+                                                        Por favor, insira um endereço de email válido.
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="mensagem">Mensagem:</label>
+                                                    <textarea class="form-control" id="mensagem" name="mensagem"
+                                                        rows="5" placeholder="Digite sua mensagem"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="container mt-4">
+                                        <h2 class="mb-4">Calculadora de Custo de Construção</h2>
+
+                                        <form id="calculadoraForm" onsubmit="calcularCustoConstrucao(); return false;">
+                                            <div class="form-group">
+                                                <label for="area">Área da Construção (m²):</label>
+                                                <input type="number" class="form-control" id="area" name="area"
+                                                    required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="precoPorMetro">Preço por Metro Quadrado:</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">R$</span>
+                                                    </div>
+                                                    <input type="number" class="form-control" id="precoPorMetro"
+                                                        name="precoPorMetro" required>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Calcular Custo</button>
+                                        </form>
+
+                                        <div id="resultado" class="mt-4">
+                                            <h3>Resultado</h3>
+                                            <p>O custo estimado da construção é: <span id="custoConstrucao"></span>
+                                                reais.</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary"
+                                        data-bs-dismiss="modal">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Script para atualizar o relógio -->
+                    <script>
+                        function updateClock() {
+                            var now = new Date();
+                            var hours = now.getHours().toString().padStart(2, '0');
+                            var minutes = now.getMinutes().toString().padStart(2, '0');
+                            var seconds = now.getSeconds().toString().padStart(2, '0');
+                            var timeString = hours + ':' + minutes + ':' + seconds;
+                            document.getElementById('clock1').textContent = timeString;
+                        }
+
+                        // Atualiza o relógio a cada segundo
+                        setInterval(updateClock, 1000);
+                        /*formulario  */
+                        function calcularCustoConstrucao() {
+                            // Obtém os valores digitados pelo usuário
+                            var area = parseFloat(document.getElementById('area').value);
+                            var precoPorMetro = parseFloat(document.getElementById('precoPorMetro').value);
+
+                            // Calcula o custo da construção
+                            var custoTotal = area * precoPorMetro;
+
+                            // Atualiza o resultado na página
+                            document.getElementById('custoConstrucao').textContent = custoTotal.toFixed(2); // Formata para duas casas decimais
+                        }
+
+                        // Seleciona o formulário pelo ID
+                        var form = document.getElementById('formulario');
+
+                        // Adiciona um ouvinte para o evento submit
+                        form.addEventListener('submit', function (event) {
+                            // Verifica se o formulário é válido
+                            if (!form.checkValidity()) {
+                                event.preventDefault(); // Impede o envio do formulário se ele for inválido
+                                event.stopPropagation();
+                            }
+
+                            // Marca os campos inválidos com classes do Bootstrap
+                            form.classList.add('was-validated');
+                        });
+
+                    </script>
+
+                    <!-- Adicionando o JavaScript do Bootstrap e do jQuery (opcional, mas necessário para certos componentes do Bootstrap) -->
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                        crossorigin="anonymous"></script>
+
+                    <!-- Bootstrap Bundle with Popper -->
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+                        integrity="sha384-VJFzDkXXK8bKuxw3rVD0yBL46XpSwb0J5Kufx+rdGnSXm8HwvO78AdyzFgynNQu3"
+                        crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+                        integrity="sha384-1gixmvp8PKOzJ8a6FP6Gb6s+OOlvKpCi7uVYYrB5wh2l3oCZBz3TgiLEd6ZuFcMk"
+                        crossorigin="anonymous"></script>
+</body>
+
+</html>

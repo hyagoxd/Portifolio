@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(6, 100px); /* 6 colunas para 24 cartas */
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #888;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    position: relative;
+}
+
+.card i {
+    display: none;
+}
+
+.card.flipped i {
+    display: block;
+}
+
+.card.flipped {
+    background-color: #999;
+}
+
+#restart-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
