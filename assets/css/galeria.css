@@ -40,7 +40,8 @@
         }
 
         /* Cursor Personalizado */
-        .cursor, .cursor-follower {
+        .cursor,
+        .cursor-follower {
             position: fixed;
             border-radius: 50%;
             transform: translate(-50%, -50%);
@@ -218,6 +219,8 @@
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 4rem;
             padding: 0 3rem;
+            perspective: 1000px;
+            /* Adicionado para o efeito 3D */
         }
 
         .project-card {
@@ -226,8 +229,12 @@
             overflow: hidden;
             aspect-ratio: 16/9;
             transform-style: preserve-3d;
-            transition: var(--transition);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
             box-shadow: var(--shadow);
+            will-change: transform;
+            /* Otimização de performance */
+            backface-visibility: hidden;
+            /* Corrige flickering */
         }
 
         .project-card::before {
@@ -242,6 +249,7 @@
 
         .project-card:hover {
             transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
         }
 
         .project-card:hover::before {
@@ -252,6 +260,7 @@
             position: relative;
             width: 100%;
             height: 100%;
+            transform-style: preserve-3d;
         }
 
         .project-image img {
@@ -259,6 +268,7 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
+            backface-visibility: hidden;
         }
 
         .project-card:hover .project-image img {
@@ -275,6 +285,12 @@
             transform: translateY(100%);
             transition: var(--transition);
             z-index: 2;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
         }
 
         .project-card:hover .project-overlay {
@@ -430,16 +446,16 @@
             .gallery-title {
                 font-size: 4.5rem;
             }
-            
+
             .gallery-subtitle {
                 font-size: 1.8rem;
             }
-            
+
             .gallery-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            
+
             .nav-menu ul {
                 display: none;
             }
@@ -449,7 +465,7 @@
             .gallery-title {
                 font-size: 3.5rem;
             }
-            
+
             .container {
                 padding: 0 2rem;
             }
@@ -457,9 +473,12 @@
 
         /* Animations */
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-20px);
             }
@@ -469,9 +488,11 @@
             0% {
                 box-shadow: 0 0 0 0 rgba(110, 69, 226, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 15px rgba(110, 69, 226, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(110, 69, 226, 0);
             }

@@ -431,6 +431,37 @@ Cursor Personalizado
     justify-content: center;
 }
 
+.image-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    opacity: 0.2;
+}
+
+.image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--primary);
+    animation: borderRotate 10s linear infinite;
+}
+
+
+
 .about-content {
     display: flex;
     flex-direction: column;
