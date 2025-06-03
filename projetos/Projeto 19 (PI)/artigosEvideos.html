@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos e Vídeos - Vale do Ribeira</title>
+    <meta name="description" content="Conteúdos educativos sobre preservação de recursos hídricos no Vale do Ribeira">
+    
+    <!-- Fontes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/artigosEvideos.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                <h1>Vale do Ribeira</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#educacao">Educação</a></li>
+                    <li><a href="artigos-videos.html" class="active">Artigos & Vídeos</a></li>
+                    <li><a href="index.html#mapa">Mapa</a></li>
+                    <li><a href="index.html#acoes">Ações</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Menu mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Artigos & Vídeos Educativos</h1>
+                <p>Conhecimento para preservar os recursos hídricos do Vale do Ribeira</p>
+            </div>
+        </section>
+
+        <section class="articles-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">Conteúdo Educativo</span>
+                    <h2>Aprenda sobre Preservação</h2>
+                    <p>Explore nossos materiais sobre recursos hídricos no Vale do Ribeira</p>
+                </div>
+                
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="artigo">Artigos</button>
+                    <button class="filter-btn" data-filter="video">Vídeos</button>
+                    <button class="filter-btn" data-filter="guia">Guias</button>
+                </div>
+                
+                <div class="content-grid">
+                    <!-- Conteúdo será inserido via JavaScript -->
+                </div>
+                
+                <div class="pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <button class="page-btn next-btn">Próximo <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                    <h3>Vale do Ribeira</h3>
+                </div>
+                <p>Preservando nossas nascentes e rios</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="links-group">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#educacao">Educação</a></li>
+                        <li><a href="artigos-videos.html">Artigos & Vídeos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-group">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Relatórios</a></li>
+                        <li><a href="#">Guias</a></li>
+                        <li><a href="#">Legislação</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Vale do Ribeira - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Vídeo -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="close-modal">&times;</button>
+            <h3 class="video-title"></h3>
+            <div class="video-container">
+                <img src="" alt="" class="video-thumbnail">
+                <button class="play-btn"><i class="fas fa-play"></i> Assistir</button>
+            </div>
+            <p class="video-description"></p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/artigosEvideos.js"></script>
+</body>
+</html>
