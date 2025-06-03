@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+}
+
+.column{
+    flex-direction: column;
+}
+
+
+.option{
+    flex: 1;
+    color: white;
+    padding: 20px;
+}
+
+.bg-cinza1{
+    background: gray;
+}
+
+.bg-cinza2{
+    background: #404040;
+}
+
+.bg-cinza3{
+    background: #0d0d0d;
+}
+
+footer{
+    background: black;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-menu{
+    display: flex;
+}
+
+.footer-copy{
+    border-top: 1px solid #2c2c2c;
+    height: 40px;
+    line-height: 40px;
+    color: #6c6c6c;
+    font-size: 12px;
+    margin-top: 30px;
+}
