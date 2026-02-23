@@ -1,83 +1,321 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hyago Garcia | Dev Front-End</title>
+    <meta name="description"
+        content="Portfólio de Hyago Garcia, Desenvolvedor Front-End com expertise em HTML, CSS, JavaScript e Bootstrap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Meu Portfólio</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#tecnologias">Tecnologias</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="glass-nav">
+        <div class="container">
+            <h1 class="logo" data-aos="fade-down">HG</h1>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" data-aos="fade-down">
+                <ul>
+                    <li><a href="#sobre" class="nav-link hover-underline">Sobre</a></li>
+                    <li><a href="#tecnologias" class="nav-link hover-underline">Skills</a></li>
+                    <li><a href="#galeria" class="nav-link hover-underline">Projetos</a></li>
+                    <li><a href="#contato" class="nav-link hover-underline">Contato</a></li>
+                    <li><button class="theme-toggle" aria-label="Alternar tema">
+                            <i class="fas fa-moon"></i>
+                        </button></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <p>Olá, sou Hyago Garcia; tenho 16 anos. Sou Desenvolvedor Front-End e amo o que faço! 
-            Além de ser um grande desafio, tenho experiência em diversas tecnologias. Conclui o Curso de Front-End no SENAC/Registro e sigo me aperfeiçoando, estudando e aprendendo.</p>
-    </section>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h2 class="hero-title">
+                        <span class="gradient-text">Hyago Garcia</span>
+                    </h2>
+                    <p class="hero-subtitle">Desenvolvedor Front-End</p>
+                    <div class="hero-buttons">
+                        <a href="#contato" class="btn btn-primary pulse">Contate-me</a>
+                        <a href="#galeria" class="btn btn-secondary">Ver Projetos</a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left">
+                    <div class="glowing-orb"></div>
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="tecnologias">
-        <h2>Tecnologias que Sei</h2>
-        <div class="tecnologias-container">
-            <div class="tecnologia">
-                <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5">
-                <p>HTML5</p>
+        <section id="sobre" class="about-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Sobre <span class="gradient-text">Mim</span></h2>
+                <div class="about-grid">
+                    <div class="about-image" data-aos="fade-right">
+                        <div class="image-wrapper">
+                            <div class="image-border"></div>
+                            <div class="image-placeholder"><img src="assets/img/fotografias_informatica (49).jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="about-content" data-aos="fade-left">
+                        <div class="about-text">
+                            <p>Desenvolvedor Front-End com experiência em criação de interfaces web responsivas e
+                                dinâmicas.
+                                Formado pelo SENAC/Registro com certificação em Desenvolvimento Front-End.</p>
+                        </div>
+                        <div class="about-text">
+                            <p>Atualmente atuo como freelancer, desenvolvendo soluções web personalizadas para clientes
+                                de
+                                diversos segmentos, com foco em:</p>
+                            <br>
+                            <ul>
+                                <li>Desenvolvimento de landing pages e sites institucionais</li>
+                                <li>Implementação de designs responsivos</li>
+                                <li>Otimização de performance web</li>
+                                <li>Integração com APIs e sistemas backend</li>
+                            </ul>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="50">0</span>+
+                                <span class="stat-label">Projetos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="2">0</span>+
+                                <span class="stat-label">Anos de Experiência</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="100">0</span>%
+                                <span class="stat-label">Dedicado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="tecnologia">
-                <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3">
-                <p>CSS3</p>
+        </section>
+
+        <section id="tecnologias" class="skills-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Minhas <span class="gradient-text">Skills</span></h2>
+                <div class="skills-grid">
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3 class="skill-title">HTML5</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
+                        <p class="skill-level">Avançado</p>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3 class="skill-title">CSS3</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                        <p class="skill-level">Avançado</p>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h3 class="skill-title">JavaScript</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <p class="skill-level">Intermediário</p>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="skill-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <h3 class="skill-title">Bootstrap</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                        <p class="skill-level">Avançado</p>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="skill-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3 class="skill-title">React</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                        <p class="skill-level">Intermediário</p>
+                    </div>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <h3 class="skill-title">Git</h3>
+                        <div class="skill-progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                        <p class="skill-level">Intermediário</p>
+                    </div>
+                </div>
             </div>
-            <div class="tecnologia">
-                <img src="https://img.icons8.com/color/48/javascript.png" alt="JavaScript">
-                <p>JavaScript</p>
+        </section>
+
+        <section id="galeria" class="projects-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Meus <span class="gradient-text">Projetos</span></h2>
+                <div class="projects-filter" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card" data-category="web" data-aos="flip-up">
+                        <div class="project-image">
+                            <img src="assets/img/landing.png" alt="Projeto 1">
+                            <div class="project-overlay">
+                                <h3 class="project-title">Landing Page Moderna</h3>
+                                <p class="project-desc">Design responsivo com animações CSS</p>
+                                <div class="project-links">
+                                    <a href="./projeto inicial/landing page/index.html" class="project-link"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="mobile" data-aos="flip-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400" alt="Projeto 2">
+                            <div class="project-overlay">
+                                <h3 class="project-title">App de Tarefas</h3>
+                                <p class="project-desc">Aplicativo para gerenciamento de tarefas</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card" data-category="design" data-aos="flip-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/600x400" alt="Projeto 3">
+                            <div class="project-overlay">
+                                <h3 class="project-title">UI Kit</h3>
+                                <p class="project-desc">Design system completo</p>
+                                <div class="project-links">
+                                    <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
+                                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-cta" data-aos="fade-up">
+                    <a href="galeria.html" class="btn btn-primary btn-large">Ver Todos os Projetos</a>
+                </div>
             </div>
-            <div class="tecnologia">
-                <img src="https://img.icons8.com/ios-filled/50/bootstrap.png" alt="Bootstrap 5">
-                <p>Bootstrap 5</p>
+        </section>
+
+        <section id="contato" class="contact-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Vamos <span class="gradient-text">Conversar</span></h2>
+                <div class="contact-grid">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3 class="contact-subtitle">Informações de Contato</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hyago.garcia.p@icloud.com">hyago.garcia.p@icloud.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+5511998278155">(11) 99827-8155</a>
+                        </div>
+                        <div class="contact-social">
+                            <a href="https://github.com/hyagoxd" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/hyago-garcia-de-paiva-7523a7303" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/qr/EO57PVJWTEOPA1" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form" data-aos="fade-left">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Nome</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">E-mail</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="message">Mensagem</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="logo">HG</h3>
+                    <p>Desenvolvendo experiências digitais incríveis</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#tecnologias">Skills</a></li>
+                        <li><a href="#galeria">Projetos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Receba Novidades</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hyago Garcia. Todos os direitos reservados.</p>
+                <div class="footer-scroll">
+                    <a href="#" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section id="galeria">
-        <h2>Galeria de Projetos</h2>
-        <div class="galeria-container">
-            <!-- Exemplo de card para a galeria -->
-            <div class="site-card">
-                <a href="galeria.html" target="_blank">
-                    <img src="img/Captura de tela 2024-09-13 011654.png" alt="Site 1">
-                    <p>Galeria de Projetos</p>
-                </a>
-            </div>
-            <!-- Adicione mais cards conforme necessário -->
-        </div>
-        <!-- Botão para a página de galeria -->
-        <div class="btn-container">
-            <a href="galeria.html" class="btn">Ver Todos os Projetos</a>
-        </div>
-    </section>
-
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Você pode entrar em contato comigo pelo e-mail ou celular.</p>
-        <p>hyago.garcia.p@icloud.com | (11)99827-8155</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Meu Portfólio. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts do Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

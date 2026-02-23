@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>App de Tarefas</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+
+<body>
+    <div id="app" role="main" aria-label="Aplicativo de gerenciamento de tarefas">
+        <header>
+            <h1>App de Tarefas</h1>
+        </header>
+        <div class="input-container">
+            <input type="text" id="nova-tarefa" placeholder="Digite sua tarefa..." aria-label="Nova tarefa" />
+            <button id="adicionar-btn" aria-label="Adicionar tarefa">Adicionar</button>
+        </div>
+        <ul id="lista-tarefas" aria-live="polite" aria-label="Lista de tarefas">
+            <!-- Tarefas aqui -->
+        </ul>
+        <nav class="filtro" aria-label="Filtro de tarefas">
+            <button data-filtro="todas" class="active" aria-pressed="true">Todas</button>
+            <button data-filtro="pendentes" aria-pressed="false">Pendentes</button>
+            <button data-filtro="completas" aria-pressed="false">Completas</button>
+        </nav>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

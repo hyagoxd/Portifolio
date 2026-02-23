@@ -1,0 +1,193 @@
+*{
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    width: 100%;
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menu, .logo{
+    display: flex;
+    align-items: center;
+}
+nav ul, nav li{
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+}
+
+nav ul{
+    display: flex;
+
+}
+
+nav a{
+    display: block;
+    padding: 15px;
+    text-transform: uppercase;
+    color: #727272;
+    text-decoration: none;
+}
+
+nav a:hover{
+    background: #7c0404;
+    color: white;
+}
+
+#banner{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.7),transparent), url('../imagem/IMG_8254.JPG');
+    
+    width: 100%;
+
+    background-position: center;
+    background-size: cover;
+    height: 850px;
+
+}
+
+.column{
+    flex-direction: column;
+}
+
+.banner-title{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-title h1, .banner-title h2{
+    color: white;
+    text-shadow: 1px 2px 1px #555;
+    margin: 10px;
+    padding: 10px;
+    width: 500px;
+}
+
+.banner-title h1{
+    font-size: 50px;
+}
+
+.banner-title h2{
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.banner-options{
+    height: 210px;
+    display: flex;
+}
+
+.option{
+    flex: 1;
+    color: white;
+    padding: 20px;
+}
+
+.banner-options a{
+    display: inline-block;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+#geral{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.col{
+    flex: 1;
+    margin: 10px;
+}
+
+.blog{
+    display: flex;
+}
+
+.blog-data{
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+    margin-right: 2px;
+}
+
+.blog-comment{
+    background: #555;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.blog-thumb img{
+    width: 100%;
+    margin-top: 20px;
+    height: 300px;
+}
+
+.blog-title{
+    margin: 20px 0;
+    font-size: 23px;
+    color: black;
+}
+
+.blog-resume{
+    color: #5c5c5c;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+footer{
+    background: black;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-menu{
+    display: flex;
+}
+
+.footer-copy{
+    border-top: 1px solid #2c2c2c;
+    height: 40px;
+    line-height: 40px;
+    color: #6c6c6c;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.bg-black{
+    background: #2c2c2c;
+}
+input[type=button]{
+    background-color:black;
+    color:white;
+    border: none;
+    cursor:pointer;
+    width: 100px;
+    height: 25px;
+}

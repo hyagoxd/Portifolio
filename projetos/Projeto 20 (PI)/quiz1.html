@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecologia do Vale - Quiz | Vale do Ribeira</title>
+    <meta name="description" content="Teste seus conhecimentos sobre a ecologia do Vale do Ribeira">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+<body>
+    <!-- Cursor Personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                <h1>Vale do Ribeira</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="./index.html#sobre">Sobre</a></li>
+                    <li><a href="./index.html#educacao">Educação</a></li>
+                    <li><a href="./index.html#mapa">Mapa</a></li>
+                    <li><a href="./index.html#acoes">Ações</a></li>
+                </ul>
+            </nav>
+            
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Menu mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+<br><br><br><br>
+    <!-- Quiz Container -->
+    <main class="quiz-container">
+        <div class="container">
+            <div class="quiz-header">
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progress-bar"></div>
+                    </div>
+                    <span id="progress-text">1/10</span>
+                </div>
+                <h2>Ecologia do Vale</h2>
+                <p>Teste seus conhecimentos sobre a fauna e flora da região</p>
+            </div>
+            
+            <div class="quiz-content">
+                <div class="quiz-question" id="question-container">
+                    <h3 id="question-text"></h3>
+                </div>
+                
+                <div class="quiz-options" id="options-container">
+                    <!-- Options will be inserted by JavaScript -->
+                </div>
+                
+                <div class="quiz-feedback" id="feedback-container">
+                    <div class="feedback-content" id="feedback-text"></div>
+                    <button class="btn-primary" id="next-btn">Próxima Pergunta</button>
+                </div>
+            </div>
+            
+            <div class="quiz-results" id="results-container">
+                <h3>Resultado do Quiz</h3>
+                <div class="score-container">
+                    <div class="score-circle">
+                        <svg class="progress-ring" width="200" height="200">
+                            <circle class="progress-ring-circle" stroke="var(--primary)" stroke-width="10" fill="transparent" r="90" cx="100" cy="100"/>
+                        </svg>
+                        <span class="score-percent" id="score-percent">0%</span>
+                    </div>
+                    <p>Você acertou <span id="score-correct">0</span> de <span id="score-total">10</span> perguntas!</p>
+                </div>
+                <div class="result-message" id="result-message"></div>
+                <div class="quiz-actions">
+                    <button class="btn-secondary" id="restart-btn">Refazer Quiz</button>
+                    <a href="quiz.html" class="btn-primary">Ver outros quizzes</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                    <h3>Vale do Ribeira</h3>
+                </div>
+                <p>Preservando nossas nascentes e rios para as futuras gerações.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="links-group">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="./index.html">Página Inicial</a></li>
+                        <li><a href="./index.html#educacao">Educação Ambiental</a></li>
+                        <li><a href="./index.html#mapa">Mapa Interativo</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-group">
+                    <h4>Quizzes</h4>
+                    <ul>
+                        <li><a href="quiz1.html">Ecologia do Vale</a></li>
+                        <li><a href="quiz2.html">Preservação Hídrica</a></li>
+                        <li><a href="quiz3.html">Desafio Ambiental</a></li>
+                    </ul>
+                </div>
+
+                <div class="links-group">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Vale do Ribeira - Todos os direitos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/quiz1.js"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vale do Ribeira - Preservação Ambiental</title>
+    <meta name="description" content="Junte-se à comunidade para preservar as nascentes e rios do Vale do Ribeira">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- CSS primeiro -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    </noscript>
+</head>
+<body>
+    <!-- Cursor Personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loader -->
+     <div class="loader">
+        <div class="loader-content">
+            <div class="pulse-loader"></div>
+            <p>Carregando o futuro do Vale do Ribeira...</p>
+        </div>
+    </div> 
+    
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                <h1>Vale do Ribeira</h1>
+            </div>
+            
+            <nav class="main-nav" aria-label="Navegação principal">
+                <ul role="menu">
+                    <li role="none"><a href="#sobre" role="menuitem" data-hover="Conheça">Sobre</a></li>
+                    <li role="none"><a href="#educacao" role="menuitem" data-hover="Aprenda">Educação</a></li>
+                    <li role="none"><a href="#mapa" role="menuitem" data-hover="Explore">Mapa</a></li>
+                    <li role="none"><a href="#acoes" role="menuitem" data-hover="Participe">Ações</a></li>
+                    <li role="none"><a href="#ranking" role="menuitem" data-hover="Destaques">Ranking</a></li>
+                </ul>
+            </nav>
+            
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="sobre" class="hero-section">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline poster="assets/img/vale.png">
+                <source src="assets/video/rio.mp4" type="video/mp4">
+                <img src="assets/img/vale.png" alt="Vale do Ribeira">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="glitch" data-text="PROTEJA O VALE DO RIBEIRA">PROTEJA O VALE DO RIBEIRA</h2>
+                <p class="subtitle">Junte-se à comunidade para preservar nossas nascentes e rios</p>
+                <div class="hero-buttons">
+                    <a href="#mapa" class="btn-primary pulse">Explorar Mapa</a>
+                    <a href="#acoes" class="btn-secondary">Participar</a>
+                </div>
+            </div>
+            
+            <div class="scroll-down">
+                <span>Deslize</span>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educação Ambiental Section -->
+    <section id="educacao" class="education-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">Conhecimento</span>
+                <h2 class="section-title">Educação <span>Ambiental</span></h2>
+                <p>Aprenda sobre a importância das nascentes e rios com nossos recursos educativos.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="education-card">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Artigos e Vídeos</h3>
+                    <p>Conteúdos educativos sobre preservação de recursos hídricos.</p>
+                    <a href="artigosEvideos.html" class="card-link">Acessar <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="education-card" >
+                    <div class="card-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3><a href="quiz.html">Quizzes Interativos</a></h3>
+                    <p>Teste seus conhecimentos e ganhe pontos no ranking.</p>
+                    <a href="quiz.html" class="card-link">Jogar <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="education-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Infográficos</h3>
+                    <p>Dados visuais sobre a situação dos recursos hídricos.</p>
+                    <a href="#" class="card-link">Ver <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa Section -->
+    <section id="mapa" class="map-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">Exploração</span>
+                <h2 class="section-title">Mapa <span>Interativo</span></h2>
+                <p>Explore as áreas de nascentes, rios e regiões que precisam de atenção.</p>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d390889.2155729888!2d-47.82638950454793!3d-24.463728515909313!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1742411476253!5m2!1spt-BR!2sbr" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Interativo do Vale do Ribeira"></iframe>
+                
+                <div class="map-actions">
+                    <button class="map-btn report-btn">
+                        <i class="fas fa-exclamation-triangle"></i> Reportar Problema
+                    </button>
+                    <button class="map-btn info-btn">
+                        <i class="fas fa-info-circle"></i> Saber Mais
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ações Section -->
+    <section id="acoes" class="actions-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">Envolva-se</span>
+                <h2 class="section-title">Ações <span>Coletivas</span></h2>
+                <p>Participe de nossas iniciativas para preservar o Vale do Ribeira.</p>
+            </div>
+            
+            <div class="campaigns-grid">
+                <div class="campaign-card">
+                    <div class="campaign-image" style="background-image: url('assets/img/limpeza.jpg');" role="img" aria-label="Pessoas participando de mutirão de limpeza"></div>
+                    <div class="campaign-content">
+                        <div class="campaign-badge">Mutirão</div>
+                        <h3>Limpeza do Rio Ribeira</h3>
+                        <div class="campaign-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 25/10/2024</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Rio Ribeira</span>
+                        </div>
+                        <p>Junte-se a nós para remover resíduos das margens do rio.</p>
+                        <button class="campaign-btn join-btn" data-campaign="limpeza">
+                            Participar <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="campaign-card">
+                    <div class="campaign-image" style="background-image: url('assets/img/refloresta.jpg');" role="img" aria-label="Pessoas plantando árvores"></div>
+                    <div class="campaign-content">
+                        <div class="campaign-badge">Plantio</div>
+                        <h3>Reflorestamento da Nascente</h3>
+                        <div class="campaign-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 30/10/2024</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Nascente do Rio X</span>
+                        </div>
+                        <p>Ajude a plantar árvores nativas para proteger a nascente.</p>
+                        <button class="campaign-btn join-btn" data-campaign="reflorestamento">
+                            Participar <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranking Section -->
+    <section id="ranking" class="ranking-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-subtitle">Destaques</span>
+                <h2 class="section-title">Ranking de <span>Engajamento</span></h2>
+                <p>Reconhecemos aqueles que mais contribuem para a preservação do Vale.</p>
+            </div>
+            
+            <div class="ranking-container">
+                <div class="ranking-card first-place">
+                    <div class="rank-badge">1º</div>
+                    <div class="user-avatar">
+                        <img src="assets/img/avatar1.jpg" alt="João Silva" loading="lazy">
+                    </div>
+                    <h3>João Silva</h3>
+                    <div class="user-points">
+                        <i class="fas fa-star"></i> 1200 pontos
+                    </div>
+                    <div class="user-actions">
+                        <span>5 mutirões</span>
+                        <span>12 reportes</span>
+                    </div>
+                </div>
+                
+                <div class="ranking-card second-place">
+                    <div class="rank-badge">2º</div>
+                    <div class="user-avatar">
+                        <img src="assets/img/avatar2.jpg" alt="Maria Oliveira" loading="lazy">
+                    </div>
+                    <h3>Maria Oliveira</h3>
+                    <div class="user-points">
+                        <i class="fas fa-star"></i> 950 pontos
+                    </div>
+                    <div class="user-actions">
+                        <span>4 mutirões</span>
+                        <span>8 reportes</span>
+                    </div>
+                </div>
+                
+                <div class="ranking-card third-place">
+                    <div class="rank-badge">3º</div>
+                    <div class="user-avatar">
+                        <img src="assets/img/avatar3.jpg" alt="Carlos Souza" loading="lazy">
+                    </div>
+                    <h3>Carlos Souza</h3>
+                    <div class="user-points">
+                        <i class="fas fa-star"></i> 800 pontos
+                    </div>
+                    <div class="user-actions">
+                        <span>3 mutirões</span>
+                        <span>10 reportes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ranking-cta">
+                <p>Quer aparecer no ranking? Participe de nossas ações!</p>
+                <a href="#acoes" class="btn-primary">Ver Ações</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Inscrição -->
+    <div id="campaign-modal" class="modal" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fechar modal">&times;</button>
+            <h2 id="modal-title">Inscreva-se na Ação</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <input type="text" id="modal-name" placeholder=" " required>
+                    <label for="modal-name">Nome Completo</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="modal-email" placeholder=" " required>
+                    <label for="modal-email">E-mail</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="modal-phone" placeholder=" ">
+                    <label for="modal-phone">Telefone (opcional)</label>
+                </div>
+                
+                <input type="hidden" id="campaign-id">
+                
+                <button type="submit" class="btn-primary">
+                    <span>Confirmar Inscrição</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon"><i class="fas fa-leaf"></i></span>
+                    <h3>Vale do Ribeira</h3>
+                </div>
+                <p>Preservando nossas nascentes e rios para as futuras gerações.</p>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="links-group">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre o Projeto</a></li>
+                        <li><a href="#educacao">Educação Ambiental</a></li>
+                        <li><a href="#mapa">Mapa Interativo</a></li>
+                        <li><a href="#acoes">Ações Coletivas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-group">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Relatórios Anuais</a></li>
+                        <li><a href="#">Guias de Preservação</a></li>
+                        <li><a href="https://arquivo.ambiente.sp.gov.br/cpla/2018/05/proposta_zee_-valedoribeira_2014.pdf">Legislação Ambiental</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-group">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="mailto:contato@valedoribeira.org">contato@valedoribeira.org</a></li>
+                        <li><a href="tel:+5511999999999">(11) 99999-9999</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Seja um Parceiro</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Vale do Ribeira - Todos os direitos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+</body>
+</html>
