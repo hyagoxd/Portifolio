@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História de Amor - Hyago ❤️ Iara</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0b1a 0%, #2d1b3a 100%);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .stars {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: -1;
+        }
+        .star {
+            position: absolute; width: 2px; height: 2px; background: white;
+            border-radius: 50%; animation: twinkle 3s infinite;
+        }
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+        /* 🔽 ANIMAÇÕES DE SCROLL REVEAL */
+        .section {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            will-change: opacity, transform;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Efeito em cascata para filhos */
+        .section .card,
+        .section .counter-box,
+        .section .timeline-item,
+        .section .photo-card,
+        .section .promise-item,
+        .section .reason-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .section.visible .card,
+        .section.visible .counter-box,
+        .section.visible .timeline-item,
+        .section.visible .photo-card,
+        .section.visible .promise-item,
+        .section.visible .reason-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Delays em cascata */
+        .section.visible .card:nth-child(1) { transition-delay: 0.1s; }
+        .section.visible .card:nth-child(2) { transition-delay: 0.2s; }
+        .section.visible .card:nth-child(3) { transition-delay: 0.3s; }
+        .section.visible .card:nth-child(4) { transition-delay: 0.4s; }
+
+        .section.visible .counter-box:nth-child(1) { transition-delay: 0.1s; }
+        .section.visible .counter-box:nth-child(2) { transition-delay: 0.2s; }
+        .section.visible .counter-box:nth-child(3) { transition-delay: 0.3s; }
+        .section.visible .counter-box:nth-child(4) { transition-delay: 0.4s; }
+
+        .section.visible .timeline-item:nth-child(1) { transition-delay: 0.1s; }
+        .section.visible .timeline-item:nth-child(2) { transition-delay: 0.2s; }
+        .section.visible .timeline-item:nth-child(3) { transition-delay: 0.3s; }
+        .section.visible .timeline-item:nth-child(4) { transition-delay: 0.4s; }
+        .section.visible .timeline-item:nth-child(5) { transition-delay: 0.5s; }
+        .section.visible .timeline-item:nth-child(6) { transition-delay: 0.6s; }
+        .section.visible .timeline-item:nth-child(7) { transition-delay: 0.7s; }
+
+        .section.visible .photo-card:nth-child(1) { transition-delay: 0.1s; }
+        .section.visible .photo-card:nth-child(2) { transition-delay: 0.2s; }
+        .section.visible .photo-card:nth-child(3) { transition-delay: 0.3s; }
+        .section.visible .photo-card:nth-child(4) { transition-delay: 0.4s; }
+
+        .section.visible .promise-item:nth-child(1) { transition-delay: 0.1s; }
+        .section.visible .promise-item:nth-child(2) { transition-delay: 0.2s; }
+        .section.visible .promise-item:nth-child(3) { transition-delay: 0.3s; }
+        .section.visible .promise-item:nth-child(4) { transition-delay: 0.4s; }
+
+        /* Tela Inicial */
+        .intro-screen {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
+            padding: 20px; position: relative;
+        }
+        .heart-main {
+            font-size: 80px; color: #e91e63;
+            animation: heartbeat 1.5s ease-in-out infinite; margin-bottom: 30px;
+        }
+        @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        .intro-text {
+            font-size: 28px;
+            background: linear-gradient(45deg, #e91e63, #9c27b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 15px; font-weight: bold;
+        }
+        .intro-subtext { font-size: 18px; color: #ccc; margin-bottom: 50px; }
+
+        .slide-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(233, 30, 99, 0.5);
+            border-radius: 50px; padding: 20px 40px;
+            display: flex; align-items: center; gap: 20px;
+            cursor: pointer; transition: all 0.3s;
+            position: relative; overflow: hidden; user-select: none;
+        }
+        .slide-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+        }
+        .slide-button:active { transform: scale(0.98); }
+
+        .slide-circle {
+            width: 50px; height: 50px;
+            background: linear-gradient(45deg, #e91e63, #9c27b0);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; animation: slideRight 2s infinite;
+            flex-shrink: 0;
+        }
+        @keyframes slideRight { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
+        .slide-text { color: #888; font-size: 16px; }
+
+        /* Conteúdo Principal */
+        .content {
+            display: none; padding: 40px 20px;
+            max-width: 800px; margin: 0 auto; width: 100%;
+        }
+
+        .title {
+            font-size: clamp(24px, 5vw, 32px); text-align: center;
+            background: linear-gradient(45deg, #e91e63, #9c27b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 20px; line-height: 1.3;
+        }
+        .subtitle {
+            text-align: center; color: #aaa;
+            font-size: clamp(14px, 3vw, 18px);
+            margin-bottom: 30px; line-height: 1.6; padding: 0 10px;
+        }
+        .names {
+            text-align: center; font-size: clamp(20px, 4vw, 24px);
+            margin: 30px 0; color: #e91e63; font-weight: 600;
+        }
+        .names span { margin: 0 10px; }
+
+        /* Contador */
+        .counter-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px; padding: clamp(20px, 5vw, 30px);
+            margin: 40px 0; text-align: center;
+            border: 1px solid rgba(233, 30, 99, 0.2);
+        }
+        .counter-date { font-size: 14px; color: #888; margin-bottom: 20px; }
+        .counter-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: clamp(10px, 2vw, 15px); margin-bottom: 30px;
+        }
+        .counter-box {
+            background: rgba(233, 30, 99, 0.1); border-radius: 15px;
+            padding: clamp(15px, 3vw, 20px);
+            border: 1px solid rgba(233, 30, 99, 0.3);
+        }
+        .counter-number {
+            font-size: clamp(32px, 8vw, 48px); font-weight: bold;
+            background: linear-gradient(45deg, #e91e63, #9c27b0);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; display: block; line-height: 1;
+        }
+        .counter-label {
+            font-size: clamp(10px, 2.5vw, 14px); color: #888;
+            text-transform: uppercase; margin-top: 5px; letter-spacing: 1px;
+        }
+        .stats-box {
+            background: rgba(255, 255, 255, 0.05); border-radius: 15px;
+            padding: clamp(15px, 4vw, 25px); margin: 20px 0;
+            text-align: center; border: 1px solid rgba(233, 30, 99, 0.1);
+        }
+        .sun-icon { font-size: clamp(30px, 7vw, 40px); margin-bottom: 15px; }
+        .stat-number {
+            font-size: clamp(18px, 4vw, 24px); color: #e91e63;
+            margin: 10px 0; font-weight: 600;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.05); border-radius: 15px;
+            padding: clamp(15px, 4vw, 25px); margin: 20px 0;
+            border-left: 4px solid #e91e63;
+            border: 1px solid rgba(233, 30, 99, 0.2);
+        }
+        .card-title {
+            color: #e91e63; font-size: clamp(16px, 3.5vw, 20px);
+            margin-bottom: 10px; font-weight: 600;
+        }
+        .card-text {
+            color: #ccc; line-height: 1.6;
+            font-size: clamp(13px, 3vw, 16px);
+        }
+
+        /* 🔽 Slider de Motivos COM BOTÕES */
+        .reasons-wrapper { position: relative; padding: 0 40px; }
+
+        .reasons-slider {
+            display: flex; gap: 15px; overflow-x: auto;
+            padding: 20px 5px; scrollbar-width: none;
+            scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .reasons-slider::-webkit-scrollbar { display: none; }
+
+        .reason-card {
+            min-width: clamp(240px, 80vw, 280px);
+            background: rgba(255, 255, 255, 0.05); border-radius: 15px;
+            padding: clamp(15px, 4vw, 25px);
+            border: 1px solid rgba(233, 30, 99, 0.3); text-align: center;
+            scroll-snap-align: start; flex-shrink: 0;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .reason-card:hover {
+            transform: translateY(-3px); border-color: #e91e63;
+        }
+        .reason-icon { font-size: clamp(24px, 6vw, 30px); margin-bottom: 15px; }
+        .reason-card p { font-size: clamp(13px, 3vw, 15px); color: #ccc; }
+
+        /* Botões de navegação do slider */
+        .scroll-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 35px; height: 35px; border-radius: 50%;
+            background: rgba(233, 30, 99, 0.3);
+            border: 2px solid rgba(233, 30, 99, 0.6);
+            color: #fff; font-size: 18px; display: flex;
+            align-items: center; justify-content: center;
+            cursor: pointer; z-index: 10; transition: all 0.3s ease;
+            user-select: none;
+        }
+        .scroll-btn:hover {
+            background: rgba(233, 30, 99, 0.6);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .scroll-btn:active { transform: translateY(-50%) scale(0.95); }
+        .scroll-btn.left { left: 0; }
+        .scroll-btn.right { right: 0; }
+        .scroll-btn:disabled {
+            opacity: 0.3; cursor: not-allowed;
+            transform: translateY(-50%) scale(1);
+        }
+
+        .scroll-hint {
+            text-align: center; color: #888; font-size: 12px;
+            margin-top: 10px; display: flex; align-items: center;
+            justify-content: center; gap: 5px; animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+        .scroll-hint-icon {
+            font-size: 14px; animation: slideHint 1.5s ease-in-out infinite;
+        }
+        @keyframes slideHint { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: clamp(25px, 6vw, 30px); }
+        .timeline::before {
+            content: ''; position: absolute; left: 10px; top: 0; bottom: 0;
+            width: 2px; background: linear-gradient(to bottom, #e91e63, #9c27b0);
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: clamp(15px, 4vw, 20px); border-radius: 10px;
+            border: 1px solid rgba(233, 30, 99, 0.2);
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -24px; top: 22px;
+            width: 12px; height: 12px; background: #e91e63;
+            border-radius: 50%; border: 3px solid #1a0b1a;
+        }
+        .timeline-date { color: #e91e63; font-size: 13px; margin-bottom: 5px; font-weight: 600; }
+        .timeline-title {
+            font-size: clamp(15px, 3.5vw, 18px); margin-bottom: 8px;
+            color: #fff; font-weight: 600;
+        }
+        .timeline-item .card-text { font-size: clamp(12px, 3vw, 14px); }
+
+        /* 📸 FOTOS - ENQUADRAMENTO PROFISSIONAL */
+        .photos-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: clamp(12px, 3vw, 15px); margin-top: 30px;
+        }
+        .photo-card {
+            position: relative; background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px; overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(233, 30, 99, 0.3);
+            aspect-ratio: 4/3; display: flex; flex-direction: column;
+        }
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(233, 30, 99, 0.4);
+            border-color: #e91e63;
+        }
+        .photo-frame {
+            position: relative; width: 100%; height: 75%;
+            overflow: hidden; background: rgba(0, 0, 0, 0.2);
+        }
+        .photo-frame::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(26, 11, 26, 0.8));
+            z-index: 1; pointer-events: none;
+        }
+        .photo-frame img {
+            width: 100%; height: 100%; object-fit: cover;
+            object-position: center; transition: transform 0.5s ease;
+            display: block;
+        }
+        .photo-card:hover .photo-frame img { transform: scale(1.05); }
+
+        .photo-caption {
+            height: 25%; display: flex; align-items: center;
+            justify-content: center; padding: 8px 12px; text-align: center;
+            background: rgba(233, 30, 99, 0.1);
+            border-top: 1px solid rgba(233, 30, 99, 0.2);
+        }
+        .photo-caption p {
+            font-size: clamp(11px, 2.8vw, 14px); color: #fff;
+            font-weight: 500; line-height: 1.3; margin: 0;
+        }
+        .photo-placeholder {
+            width: 100%; height: 100%; display: flex;
+            align-items: center; justify-content: center;
+            font-size: clamp(30px, 8vw, 50px); color: #e91e63;
+            background: rgba(233, 30, 99, 0.1);
+        }
+
+        /* Promessas */
+        .promise-item {
+            display: flex; align-items: flex-start;
+            gap: clamp(10px, 3vw, 15px); margin: 20px 0;
+            padding: clamp(15px, 4vw, 20px);
+            background: rgba(255, 255, 255, 0.05); border-radius: 10px;
+            border: 1px solid rgba(233, 30, 99, 0.2);
+        }
+        .promise-icon {
+            font-size: clamp(20px, 5vw, 24px); color: #e91e63; flex-shrink: 0;
+        }
+        .promise-item .card-title { font-size: clamp(14px, 3.5vw, 18px); margin-bottom: 5px; }
+        .promise-item .card-text { font-size: clamp(12px, 3vw, 14px); }
+
+        /* Carta de Amor */
+        .love-letter {
+            background: rgba(255, 255, 255, 0.05); border-radius: 20px;
+            padding: clamp(25px, 6vw, 40px); text-align: center;
+            border: 2px solid rgba(233, 30, 99, 0.3);
+            cursor: pointer; transition: all 0.3s;
+        }
+        .love-letter:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 40px rgba(233, 30, 99, 0.2);
+        }
+        .love-letter:active { transform: scale(0.99); }
+        .envelope-icon { font-size: clamp(40px, 10vw, 60px); margin-bottom: 20px; color: #e91e63; }
+
+        .letter-content {
+            display: none; text-align: left; line-height: 2;
+            font-style: italic; margin-top: 20px; padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: clamp(13px, 3vw, 16px);
+        }
+        .letter-content p { margin-bottom: 15px; color: #ddd; }
+        .signature {
+            text-align: right; margin-top: 30px; color: #e91e63;
+            font-weight: bold; font-style: normal;
+        }
+
+        /* Corações flutuantes */
+        .floating-heart {
+            position: fixed; color: #e91e63; pointer-events: none;
+            animation: float 4s ease-in infinite; font-size: 20px;
+            z-index: 1000; user-select: none;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* 📱 RESPONSIVIDADE */
+        @media (max-width: 1024px) {
+            .content { padding: 30px 15px; }
+            .photos-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        }
+        @media (max-width: 768px) {
+            .content { padding: 25px 15px; }
+            .counter-grid { grid-template-columns: repeat(2, 1fr); }
+            .photos-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .photo-card { aspect-ratio: 3/2; }
+        }
+        @media (max-width: 480px) {
+            .intro-text { font-size: 22px; }
+            .intro-subtext { font-size: 15px; }
+            .slide-button { padding: 15px 30px; gap: 15px; }
+            .slide-circle { width: 40px; height: 40px; }
+            .slide-text { font-size: 14px; }
+            .content { padding: 20px 12px; }
+            .section { margin-bottom: 40px; }
+            .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .counter-box { padding: 12px 8px; }
+            .photos-grid { grid-template-columns: 1fr; gap: 15px; }
+            .photo-card { aspect-ratio: 4/3; }
+            .reason-card { min-width: 220px; padding: 15px; }
+            .timeline { padding-left: 25px; }
+            .timeline-item::before { left: -22px; width: 10px; height: 10px; border-width: 2px; }
+            .promise-item { flex-direction: column; text-align: center; align-items: center; }
+            .love-letter { padding: 25px 15px; }
+            .reasons-wrapper { padding: 0 10px; }
+            .scroll-btn { width: 30px; height: 30px; font-size: 16px; }
+            .scroll-btn.left { left: 5px; }
+            .scroll-btn.right { right: 5px; }
+        }
+        @media (max-width: 360px) {
+            .counter-number { font-size: 28px; }
+            .counter-label { font-size: 10px; }
+            .photo-caption p { font-size: 12px; }
+            .names { font-size: 18px; }
+        }
+        @media (max-height: 500px) and (orientation: landscape) {
+            .intro-screen { height: auto; padding: 30px 20px; }
+            .content { padding: 20px 15px; }
+        }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .photo-frame img { image-rendering: -webkit-optimize-contrast; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        footer {
+            text-align: center; padding: 40px 20px; color: #666;
+            font-size: clamp(12px, 3vw, 14px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 20px;
+        }
+        footer p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <!-- Tela Inicial -->
+    <div class="intro-screen" id="introScreen">
+        <div class="heart-main">❤️</div>
+        <h1 class="intro-text">Uma surpresa especial espera por você...</h1>
+        <p class="intro-subtext">Prepare o seu coração</p>
+        <div class="slide-button" onclick="startExperience()" role="button" tabindex="0">
+            <div class="slide-circle">→</div>
+            <span class="slide-text">Deslize para abrir</span>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="content" id="mainContent">
+        <!-- Header -->
+        <section class="section visible">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="font-size: clamp(40px, 12vw, 60px); color: #e91e63; margin-bottom: 20px;">💖</div>
+                <h1 class="title">Nossa História de Amor</h1>
+                <p class="subtitle">Uma jornada mágica entre duas almas que encontraram o amor verdadeiro</p>
+                <div class="names">Hyago <span>❤️</span> Iara</div>
+            </div>
+        </section>
+
+        <!-- Contador -->
+        <section class="section">
+            <div class="counter-container">
+                <div style="font-size: clamp(35px, 10vw, 50px); margin-bottom: 10px;">📅</div>
+                <h2 class="title" style="font-size: clamp(18px, 4vw, 24px);">Desde que nossos olhos se encontraram pela primeira vez</h2>
+                <p class="counter-date">21 de junho de 2025</p>
+                <div class="counter-grid">
+                    <div class="counter-box"><span class="counter-number" id="days">0</span><div class="counter-label">Dias</div></div>
+                    <div class="counter-box"><span class="counter-number" id="hours">0</span><div class="counter-label">Horas</div></div>
+                    <div class="counter-box"><span class="counter-number" id="minutes">0</span><div class="counter-label">Minutos</div></div>
+                    <div class="counter-box"><span class="counter-number" id="seconds">0</span><div class="counter-label">Segundos</div></div>
+                </div>
+                <div class="stats-box">
+                    <div class="sun-icon">☀️</div>
+                    <p style="color: #e91e63; font-size: clamp(16px, 4vw, 20px); margin-bottom: 10px;">
+                        Juntos completamos <span id="solarOrbits">0</span> voltas ao redor do sol
+                    </p>
+                    <p style="color: #888; font-size: clamp(12px, 3vw, 14px);">Desde aquele dia mágico em junho de 2025</p>
+                </div>
+                <div class="stats-box">
+                    <div style="font-size: clamp(30px, 8vw, 40px); margin-bottom: 15px;">⏰</div>
+                    <p class="stat-number"><span id="totalHours">0</span> horas</p>
+                    <p style="color: #888; font-size: clamp(12px, 3vw, 14px);">de momentos compartilhados e amor crescente</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossa História -->
+        <section class="section">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div style="font-size: clamp(30px, 8vw, 40px); color: #e91e63;">📖</div>
+            </div>
+            <h2 class="title">Nossa História</h2>
+            <div class="card"><p class="card-text">Nos conhecemos por acaso e, desde aquele dia, nunca mais nos separamos. O que começou com uma simples troca de olhares se transformou na nossa melhor aventura. Hoje, celebramos o amor que construímos juntos.</p></div>
+            <div class="card"><div class="card-title">💬 Conexão</div><p class="card-text">Conversas infinitas que aproximaram nossos corações</p></div>
+            <div class="card"><div class="card-title">🤝 Cumplicidade</div><p class="card-text">Cada momento construindo algo especial</p></div>
+            <div class="card"><div class="card-title">💖 Amor</div><p class="card-text">Um sentimento que cresce a cada dia</p></div>
+        </section>
+
+        <!-- Por que eu te amo -->
+        <section class="section">
+            <h2 class="title">Por que eu te amo?</h2>
+            <p class="subtitle">Deslize para descobrir alguns motivos...</p>
+            <div class="reasons-wrapper">
+                <button class="scroll-btn left" onclick="scrollReasons(-1)" aria-label="Rolar para esquerda">←</button>
+                <div class="reasons-slider" id="reasonsSlider">
+                    <div class="reason-card"><div class="reason-icon">😊</div><p>Pelo jeito que você sorri quando me vê</p></div>
+                    <div class="reason-card"><div class="reason-icon">✨</div><p>Porque você me faz querer ser uma pessoa melhor todos os dias</p></div>
+                    <div class="reason-card"><div class="reason-icon">🌟</div><p>Pela paz que eu sinto quando estou ao seu lado</p></div>
+                    <div class="reason-card"><div class="reason-icon">🤗</div><p>Pelo seu abraço, que é o melhor lugar do mundo</p></div>
+                    <div class="reason-card"><div class="reason-icon">👁️</div><p>Pela forma como seus olhos brilham quando fala do que ama</p></div>
+                    <div class="reason-card"><div class="reason-icon">💪</div><p>Porque você faz os dias difíceis parecerem mais leves</p></div>
+                </div>
+                <button class="scroll-btn right" onclick="scrollReasons(1)" aria-label="Rolar para direita">→</button>
+            </div>
+            <div class="scroll-hint" id="scrollHint"><span class="scroll-hint-icon">⇄</span> Deslize para os lados para ver mais</div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <h2 class="title">Nossa Linha do Tempo</h2>
+            <p class="subtitle">Momentos especiais que construíram nossa história</p>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-date">21/06/2025</div><div class="timeline-title">O Primeiro Olhar</div><p class="card-text">Nos conhecemos e foi impossível não notar aquele sorriso especial. Algo mágico aconteceu naquele momento.</p></div>
+                <div class="timeline-item"><div class="timeline-date">24/06/2025</div><div class="timeline-title">O Primeiro Dia indo No terreiro por você</div><p class="card-text">Um dia que você pediu para eu ir no terreiro e eu aceitei.</p></div>
+                <div class="timeline-item"><div class="timeline-date">05/07/2025</div><div class="timeline-title">O Pedido de Namoro</div><p class="card-text">Um jantar surpresa no restaurante japonês 🍣</p></div>
+                <div class="timeline-item"><div class="timeline-date">25/06/2025</div><div class="timeline-title">Nossa viagem para Curitiba</div><p class="card-text">Viajamos para Curitiba e nos divertimos muito.</p></div>
+                <div class="timeline-item"><div class="timeline-date">24/08/2025</div><div class="timeline-title">Ajuda com pintura</div><p class="card-text">Ajudamos no terreiro do seu pai kkkk.</p></div>
+                <div class="timeline-item"><div class="timeline-date">28/09/2025</div><div class="timeline-title">Festa de cosme e damião</div><p class="card-text">Celebramos a festa de cosme e damião juntos ksks.</p></div>
+                <div class="timeline-item"><div class="timeline-date">25/12/2025</div><div class="timeline-title">Nosso Primeiro Natal Juntos</div><p class="card-text">Celebrando o amor e a felicidade de estarmos juntos nas festas de fim de ano.</p></div>
+            </div>
+        </section>
+
+        <!-- 📸 Nossos Momentos -->
+        <section class="section">
+            <h2 class="title">Nossos Momentos</h2>
+            <p class="subtitle">Memórias eternizadas em fotos</p>
+            <div class="photos-grid">
+                <div class="photo-card">
+                    <div class="photo-frame"><img src="./img/curitiba.jpg" alt="Nossa viagem para Curitiba" onerror="this.parentElement.innerHTML='<div class=\\'photo-placeholder\\'>🏙️</div>'"></div>
+                    <div class="photo-caption"><p>Nossa viagem para Curitiba</p></div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-frame"><img src="./img/parque.JPG" alt="Parque de diversões" onerror="this.parentElement.innerHTML='<div class=\\'photo-placeholder\\'>🎡</div>'"></div>
+                    <div class="photo-caption"><p>Parque de diversões</p></div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-frame"><img src="./img/restaurante.jpg" alt="Restaurante Country" onerror="this.parentElement.innerHTML='<div class=\\'photo-placeholder\\'>🍽️</div>'"></div>
+                    <div class="photo-caption"><p>Restaurante Country</p></div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-frame"><img src="./img/milk.jpg" alt="Milkshake" onerror="this.parentElement.innerHTML='<div class=\\'photo-placeholder\\'>🥤</div>'"></div>
+                    <div class="photo-caption"><p>Milkshake que você quis kkk</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nosso Cantinho -->
+        <section class="section">
+            <div class="card">
+                <div class="card-title">🏡 Nosso Cantinho</div>
+                <p class="card-text">O lugar onde construímos nossos sonhos e fazemos maratonas de série. Não importa o destino, o meu lugar favorito é ao seu lado.</p>
+            </div>
+        </section>
+
+        <!-- Minhas Promessas -->
+        <section class="section">
+            <h2 class="title">Minhas Promessas</h2>
+            <p class="subtitle">Compromissos eternos, de mim para você</p>
+            <div class="promise-item"><div class="promise-icon">🎉</div><div><div class="card-title">Celebrar Nosso Amor</div><p class="card-text">Oficializar perante o mundo o que nossos corações já sabem</p></div></div>
+            <div class="promise-item"><div class="promise-icon">✈️</div><div><div class="card-title">Viajar o Mundo</div><p class="card-text">Explorar cada canto deste planeta ao seu lado</p></div></div>
+            <div class="promise-item"><div class="promise-icon">👨‍👩‍👧‍👦</div><div><div class="card-title">Sonhar o Futuro</div><p class="card-text">Quem sabe um dia, expandir nossa família com muito amor</p></div></div>
+            <div class="promise-item"><div class="promise-icon">🌱</div><div><div class="card-title">Crescer Juntos</div><p class="card-text">Evoluir e amadurecer, mas sempre de mãos dadas</p></div></div>
+        </section>
+
+        <!-- Carta de Amor -->
+        <section class="section">
+            <p style="text-align: center; font-style: italic; color: #888; margin-bottom: 30px; font-size: clamp(14px, 3.5vw, 16px);">"Com todo meu amor."</p>
+            <div class="love-letter" onclick="toggleLetter()" role="button" tabindex="0">
+                <div class="envelope-icon">💌</div>
+                <h2 class="title">Carta de Amor</h2>
+                <p style="color: #888; margin-top: 10px; font-size: clamp(13px, 3vw, 15px);">Toque para abrir</p>
+                <div class="letter-content" id="letterContent">
+                    <p><strong>Iara,</strong></p><br>
+                    <p>Meu amor, desde o momento em que nossos olhares se cruzaram, minha vida ganhou um novo significado. Cada dia ao seu lado é um presente que eu agradeço infinitamente.</p><br>
+                    <p>Você é a pessoa mais especial que já conheci. Seu sorriso ilumina meus dias, seu abraço é meu porto seguro, e seu amor é o maior tesouro que eu poderia ter.</p><br>
+                    <p>Prometo te amar, respeitar e cuidar de você todos os dias da minha vida. Obrigado por ser exatamente quem você é e por me fazer tão feliz.</p><br>
+                    <p>Te amo hoje, amanhã e para sempre.</p>
+                    <div class="signature">Com todo meu amor,<br>Hyago ❤️</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Feito com 💖 para Iara</p>
+            <p style="margin-top: 10px;">Hyago & Iara - Para sempre juntos</p>
+        </footer>
+    </div>
+
+    <script>
+        // 🔽 Intersection Observer para animações de scroll
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Anima apenas uma vez
+                }
+            });
+        }, observerOptions);
+
+        // Criar estrelas
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = window.innerWidth < 480 ? 50 : 100;
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Iniciar experiência
+        function startExperience() {
+            document.getElementById('introScreen').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Observar seções para animação
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+            
+            createFloatingHearts();
+        }
+
+        // Contador
+        function updateCounter() {
+            const startDate = new Date('2025-06-21T00:00:00');
+            const now = new Date();
+            const diff = now - startDate;
+            document.getElementById('days').textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').textContent = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').textContent = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('seconds').textContent = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById('solarOrbits').textContent = (diff / (1000 * 60 * 60 * 24 * 365.25)).toFixed(2);
+            document.getElementById('totalHours').textContent = Math.floor(diff / (1000 * 60 * 60)).toLocaleString('pt-BR');
+        }
+
+        // Slider de motivos
+        function scrollReasons(direction) {
+            const slider = document.getElementById('reasonsSlider');
+            if (!slider) return;
+            const scrollAmount = slider.clientWidth * 0.8;
+            slider.scrollTo({ left: slider.scrollLeft + (direction * scrollAmount), behavior: 'smooth' });
+            const hint = document.getElementById('scrollHint');
+            if (hint) { hint.style.opacity = '0'; setTimeout(() => hint.style.display = 'none', 300); }
+        }
+
+        function updateScrollButtons() {
+            const slider = document.getElementById('reasonsSlider');
+            if (!slider) return;
+            const leftBtn = slider.parentElement?.querySelector('.scroll-btn.left');
+            const rightBtn = slider.parentElement?.querySelector('.scroll-btn.right');
+            if (leftBtn) leftBtn.disabled = slider.scrollLeft <= 0;
+            if (rightBtn) rightBtn.disabled = slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 10);
+        }
+
+        // Corações flutuantes
+        function createFloatingHearts() {
+            const maxHearts = window.innerWidth < 480 ? 3 : 5;
+            let heartCount = 0;
+            setInterval(() => {
+                if (heartCount >= maxHearts) return;
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                document.body.appendChild(heart);
+                heartCount++;
+                setTimeout(() => { heart.remove(); heartCount--; }, 6000);
+            }, 2500);
+        }
+
+        // Carta de amor
+        function toggleLetter() {
+            const content = document.getElementById('letterContent');
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+                content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Inicialização
+        window.addEventListener('load', () => {
+            createStars();
+            updateCounter();
+            setInterval(updateCounter, 1000);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Suporte teclado na carta
+            const letter = document.querySelector('.love-letter');
+            if (letter) {
+                letter.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLetter(); }
+                });
+            }
+            // Atualizar botões do slider
+            const slider = document.getElementById('reasonsSlider');
+            if (slider) {
+                ['scroll', 'touchstart'].forEach(evt => slider.addEventListener(evt, updateScrollButtons, { passive: true }));
+                setTimeout(updateScrollButtons, 500);
+                // Esconder dica ao interagir
+                const hint = document.getElementById('scrollHint');
+                if (hint) {
+                    ['scroll', 'touchstart', 'mousedown'].forEach(evt => {
+                        slider.addEventListener(evt, () => { hint.style.opacity = '0'; setTimeout(() => hint.style.display = 'none', 300); }, { passive: true });
+                    });
+                }
+            }
+        });
+
+        // Touch events mobile
+        let touchStartX = 0, touchEndX = 0;
+        document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX - touchStartX > 50) { /* swipe right */ }
+            if (touchStartX - touchEndX > 50) { /* swipe left */ }
+        }, { passive: true });
+
+        // Prevenir double-tap zoom
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = new Date().getTime();
+            if (now - lastTouchEnd <= 300) event.preventDefault();
+            lastTouchEnd = now;
+        }, { passive: false });
+    </script>
+</body>
+</html>
